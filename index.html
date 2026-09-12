@@ -3,162 +3,506 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khevin Salandron | Client Accounting & QuickBooks Specialist</title>
+    <title>Khevin Salandron | Client Accounting & QuickBooks Specialist - Portfolio</title>
     <style>
         :root {
-            --primary: #1a365d;
-            --secondary: #2b6cb0;
-            --accent: #319795;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #2d3748;
-            --text-light: #64748b;
+            --bg-yellow: #fef08a;
+            --bg-yellow-light: #fefde8;
+            --bg-dark: #3b2f1c;
+            --text-dark: #272115;
+            --text-light: #fefde8;
+            --accent-yellow: #fde047;
+            --border-brown: #5d4a2d;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        
-        header { 
-            background: linear-gradient(135deg, #0f172a, var(--primary), var(--secondary)); 
-            color: white; 
-            padding: 4.5rem 1.5rem 3.5rem 1.5rem; 
-            text-align: center; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #1a1a1a; color: var(--text-dark); display: flex; flex-direction: column; align-items: center; padding: 2rem 1rem; }
+
+        /* Slide Container simulating Canva Presentation View */
+        .slide {
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            background-color: var(--bg-yellow);
+            margin-bottom: 2rem;
+            padding: 3.5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-radius: 4px;
+            overflow: hidden;
         }
-        header h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
-        header p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-        
-        .btn { 
-            display: inline-block; 
-            background: white; 
-            color: var(--primary); 
-            padding: 0.75rem 1.75rem; 
-            border-radius: 50px; 
-            font-weight: 700; 
-            text-decoration: none; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s, background 0.2s; 
+
+        .slide.dark {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
         }
-        .btn:hover { background: #f1f5f9; transform: translateY(-2px); }
-        
-        .container { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.25rem; }
-        section { margin-bottom: 2.5rem; }
-        
-        h2 { 
-            font-size: 1.5rem; 
-            color: var(--primary); 
-            margin-bottom: 1.25rem; 
-            border-bottom: 2px solid #e2e8f0; 
-            padding-bottom: 0.4rem; 
+
+        .slide.cream {
+            background-color: var(--bg-yellow-light);
+            color: var(--text-dark);
+        }
+
+        /* Header / Footer tag info on slides */
+        .slide-header-top {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.7;
+            font-weight: 600;
+        }
+
+        .slide-footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.7;
+            border-top: 1px solid rgba(0,0,0,0.15);
+            padding-top: 1rem;
+        }
+        .slide.dark .slide-footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        /* Slide 1: Cover */
+        .cover-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        .cover-text h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        .cover-text p {
+            font-size: 1.05rem;
+            max-width: 340px;
+            opacity: 0.85;
+            line-height: 1.4;
+        }
+        .cover-image-box {
+            width: 320px;
+            height: 220px;
+            background: #d4c5a9;
+            border-radius: 6px;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #555;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 2px solid #5d4a2d;
+            background-size: cover;
+            background-position: center;
         }
-        
-        .card { 
-            background: var(--card-bg); 
-            padding: 1.5rem; 
-            border-radius: 12px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
-            border-left: 4px solid var(--secondary); 
-            margin-bottom: 1.25rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+
+        /* Slide 2: About Me Split */
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            height: 100%;
         }
-        .card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
-        .card h3 { color: var(--primary); font-size: 1.15rem; font-weight: 700; }
-        .card .company { font-style: italic; color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.85rem; font-weight: 500; }
-        
-        ul { padding-left: 1.2rem; }
-        li { margin-bottom: 0.4rem; font-size: 0.93rem; color: #475569; }
-        
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-        .tag { 
-            background: #ffffff; 
-            color: var(--primary); 
-            border: 1px solid #cbd5e1; 
-            padding: 0.4rem 0.9rem; 
-            border-radius: 20px; 
-            font-size: 0.85rem; 
-            font-weight: 600; 
-            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        .about-text h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
         }
-        
-        footer { text-align: center; padding: 2.5rem 1.5rem; background: #0f172a; color: #94a3b8; margin-top: 3rem; font-size: 0.9rem; }
-        footer a { color: #38bdf8; text-decoration: none; font-weight: 500; }
+        .about-text p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            opacity: 0.85;
+            margin-bottom: 1rem;
+        }
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .stat-item h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+        .stat-item p {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0;
+            opacity: 0.7;
+        }
+
+        /* Slide 3 & 7: Grid Cards & Pricing */
+        .slide-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .grid-2x3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 3rem;
+        }
+        .grid-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25krem;
+        }
+        .grid-item p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Services 3 Column Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .service-card {
+            background-color: var(--bg-yellow);
+            padding: 1.25rem;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .service-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            font-size: 0.75rem;
+            line-height: 1.4;
+            opacity: 0.8;
+        }
+
+        /* Workflow Steps Horizontal */
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            position: relative;
+        }
+        .workflow-step span.step-num {
+            font-size: 0.75rem;
+            font-weight: 800;
+            opacity: 0.6;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .workflow-step h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+        .workflow-step p {
+            font-size: 0.72rem;
+            line-height: 1.35;
+            opacity: 0.8;
+        }
+
+        /* Pricing Packages */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+        .price-card {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .price-card.featured {
+            border: 2px solid var(--accent-yellow);
+        }
+        .badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--bg-yellow);
+            color: var(--text-dark);
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .price-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .price-card .price { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--accent-yellow); }
+        .price-card ul { list-style: none; padding: 0; font-size: 0.75rem; opacity: 0.85; line-height: 1.5; }
+        .price-card li { margin-bottom: 0.35rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.35rem; }
+
+        @media(max-width: 768px) {
+            .slide { padding: 1.5rem; aspect-ratio: auto; min-height: 380px; }
+            .cover-content, .about-split, .grid-2x3, .services-grid, .workflow-steps, .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .cover-image-box { display: none; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Khevin Salandron</h1>
-        <p>Client Accounting Specialist & QuickBooks Support Expert</p>
-        <a href="mailto:khevinsalandron@gmail.com" class="btn">Get in Touch</a>
-    </header>
-
-    <div class="container">
-        <!-- About Section -->
-        <section>
-            <h2>Professional Profile</h2>
-            <div class="card" style="border-left-color: var(--accent);">
-                <p style="color: var(--text); font-size: 0.98rem; line-height: 1.6;">
-                    Detail-oriented and tech-savvy accounting professional with over 3 years of hands-on experience managing financial software, executing account reconciliations, processing client invoices, and ensuring accurate ledger maintenance. Proven ability to handle enterprise-level client accounts under fast-paced agency and remote setups.
-                </p>
+    <!-- SLIDE 1: COVER -->
+    <div class="slide">
+        <div class="slide-header-top">
+            <span>Services Proposal</span>
+            <span>Version 1.0</span>
+        </div>
+        <div class="cover-content">
+            <div class="cover-text">
+                <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.7; display: block; margin-bottom: 0.5rem;">Client Accounting Specialist</span>
+                <h1>Hi, I'm Khevin.</h1>
+                <p>I keep client financials, ledgers, and accounts running smoothly and accurately.</p>
             </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section>
-            <h2>Work Experience</h2>
-            
-            <div class="card">
-                <h3>Client Accounting Specialist</h3>
-                <div class="company">Associa (via 5 Star VA / HireSmart Virtual Employees) &bull; March 2026 – Present</div>
-                <ul>
-                    <li>Execute daily client accounting operations, ledger maintenance, and financial reporting within enterprise accounting systems (C3 platform via Citrix).</li>
-                    <li>Process and manage client invoices, reconcile billing discrepancies, and handle accounts receivable/payable workflows with high accuracy.</li>
-                    <li>Collaborate with cross-functional teams to resolve financial mismatches and streamline bookkeeping processes.</li>
-                </ul>
+            <div class="cover-image-box">
+                Professional Photo
             </div>
-
-            <div class="card">
-                <h3>QuickBooks Subject Matter Expert</h3>
-                <div class="company">Financial Services Support Agency &bull; November 2024 – February 2026</div>
-                <ul>
-                    <li>Supported clients with comprehensive ledger corrections, account reconciliations, and invoice tracking within QuickBooks Online and Desktop.</li>
-                    <li>Collaborated with cross-functional teams to resolve complex discrepancies in billing and payment records.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>QuickBooks Technical Support Specialist</h3>
-                <div class="company">Software Support Services &bull; August 2021 – October 2024</div>
-                <ul>
-                    <li>Resolved 100+ monthly QuickBooks discrepancies including bank feeds, payroll errors, and misclassified transactions.</li>
-                    <li>Trained small business owners on foundational bookkeeping principles, expense tracking, and financial reporting.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Technical Stack / Skills -->
-        <section>
-            <h2>Core Tech Stack & Tools</h2>
-            <div class="skills-grid">
-                <span class="tag">QuickBooks Online & Desktop</span>
-                <span class="tag">C3 Platform (Citrix)</span>
-                <span class="tag">Strongroom (Avid)</span>
-                <span class="tag">Workday</span>
-                <span class="tag">Microsoft Excel</span>
-                <span class="tag">Salesforce</span>
-                <span class="tag">Amazon Connect</span>
-                <span class="tag">Slack</span>
-                <span class="tag">Outlook & Gmail</span>
-            </div>
-        </section>
+        </div>
+        <div class="slide-footer-bottom">
+            <span>Prepared By: Khevin Salandron</span>
+            <span>Role: Client Accounting & QuickBooks Expert</span>
+            <span>Date: 2026-06-06</span>
+        </div>
     </div>
 
-    <footer>
-        <p>Email: <a href="mailto:khevinsalandron@gmail.com">khevinsalandron@gmail.com</a> &bull; Location: Cabucgayan, Biliran, Philippines</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Khevin Salandron. All rights reserved.</p>
-    </footer>
+    <!-- SLIDE 2: ABOUT ME -->
+    <div class="slide cream">
+        <div class="slide-header-top">
+            <span>About Me</span>
+            <span>02 / 07</span>
+        </div>
+        <div class="about-split">
+            <div class="cover-image-box" style="height: 100%; min-height: 200px;">
+                Workspace Photo
+            </div>
+            <div class="about-text">
+                <h2>I'm the person who handles the busy work so clients don't have to.</h2>
+                <p>Detail-oriented and tech-savvy accounting professional with over 3 years of hands-on experience managing financial software, executing account reconciliations, and ensuring clean ledger maintenance under fast-paced remote setups.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3>3+ yrs</h3>
+                        <p>Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Accounts Handled</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Remote Ready</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer-bottom">
+            <span>Professional Profile</span>
+            <span>Nice to meet you</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: SKILLS & TOOLS -->
+    <div class="slide dark">
+        <div class="slide-header-top">
+            <span>Virtual Assistant</span>
+            <span>03 / 07</span>
+        </div>
+        <div>
+            <h2 class="slide-title" style="color: var(--accent-yellow);">My Skills & Tools</h2>
+            <div class="grid-2x3">
+                <div class="grid-item">
+                    <h4 style="color: var(--accent-yellow);">Ledger & Reconciliations</h4>
+                    <p>Daily client accounting operations, meticulous bank feed clearing, and trial balance checks.</p>
+                </div>
+                <div class="grid-item">
+                    <h4 style="color: var(--accent-yellow);">Software Ecosystem</h4>
+                    <p>QuickBooks Online & Desktop, C3 Platform via Citrix, Strongroom, Workday, and Excel.</p>
+                </div>
+                <div class="grid-item">
+                    <h4 style="color: var(--accent-yellow);">Invoicing & Billing</h4>
+                    <p>Processing client invoices, resolving payment discrepancies, and managing accounts receivable.</p>
+                </div>
+                <div class="grid-item">
+                    <h4 style="color: var(--accent-yellow);">Communication Tools</h4>
+                    <p>Slack, Microsoft Teams, Zoom, Gmail, and structured client progress reporting.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer-bottom">
+            <span>Experience</span>
+            <span>My Skills & Tools</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: SERVICES OVERVIEW -->
+    <div class="slide cream">
+        <div class="slide-header-top">
+            <span>Virtual Assistant</span>
+            <span>04 / 07</span>
+        </div>
+        <div>
+            <h2 class="slide-title">Services Overview</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span style="font-size: 0.7rem; font-weight: 800; opacity: 0.5;">01</span>
+                    <h4>Bookkeeping & Reconciliations</h4>
+                    <p>Complete transaction categorization, bank reconciliation, and tidy monthly ledger reports.</p>
+                </div>
+                <div class="service-card">
+                    <span style="font-size: 0.7rem; font-weight: 800; opacity: 0.5;">02</span>
+                    <h4>QuickBooks Support</h4>
+                    <p>Troubleshooting feed errors, correcting misclassified entries, and setup optimization.</p>
+                </div>
+                <div class="service-card">
+                    <span style="font-size: 0.7rem; font-weight: 800; opacity: 0.5;">03</span>
+                    <h4>Invoicing & AP/AR</h4>
+                    <p>Streamlining customer invoicing pipelines and managing vendor bills with accuracy.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer-bottom">
+            <span>Services</span>
+            <span>What I Do</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: WORKFLOW -->
+    <div class="slide cream">
+        <div class="slide-header-top">
+            <span>Virtual Assistant</span>
+            <span>05 / 07</span>
+        </div>
+        <div>
+            <h2 class="slide-title">Workflow</h2>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <span class="step-num">01</span>
+                    <h4>Onboard</h4>
+                    <p>Review current financial systems, access protocols, and identify immediate cleanup goals.</p>
+                </div>
+                <div class="workflow-step">
+                    <span class="step-num">02</span>
+                    <h4>Easy Setup</h4>
+                    <p>Integrate securely into your existing platforms with zero disruption to daily workflows.</p>
+                </div>
+                <div class="workflow-step">
+                    <span class="step-num">03</span>
+                    <h4>I Take Over</h4>
+                    <p>Execute routine bookkeeping, reconciliations, and invoice processing independently.</p>
+                </div>
+                <div class="workflow-step">
+                    <span class="step-num">04</span>
+                    <h4>Stay in Sync</h4>
+                    <p>Regular syncs and progress updates so you always have full visibility on your books.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer-bottom">
+            <span>Services</span>
+            <span>How We Work Together</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: WHY WORK WITH ME -->
+    <div class="slide">
+        <div class="slide-header-top">
+            <span>Virtual Assistant</span>
+            <span>06 / 07</span>
+        </div>
+        <div>
+            <h2 class="slide-title">Why Work With Me</h2>
+            <div class="grid-2x3">
+                <div class="grid-item">
+                    <h4>Detail-Oriented</h4>
+                    <p>Zero tolerance for missing cents or misclassified entries. Accuracy is top priority.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Dependable Support</h4>
+                    <p>Reliable remote execution with prompt communication and structured turnaround times.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Client-Focused</h4>
+                    <p>Tailoring solutions specifically around your business bottlenecks to save you valuable time.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Adaptable & Flexible</h4>
+                    <p>Quick learner across diverse enterprise tools like C3, QuickBooks, and proprietary dashboards.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer-bottom">
+            <span>Trusted E-Commerce Support</span>
+            <span>Why Work With Me</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: PACKAGES -->
+    <div class="slide dark">
+        <div class="slide-header-top">
+            <span>Virtual Assistant</span>
+            <span>07 / 07</span>
+        </div>
+        <div>
+            <h2 class="slide-title" style="color: var(--accent-yellow);">Flexible Packages</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Hourly Support</h4>
+                    <div class="price">$15</div>
+                    <p style="font-size: 0.7rem; margin-bottom: 0.5rem; opacity: 0.7;">Per Hour</p>
+                    <ul>
+                        <li>Flexible assistance when you need extra hands</li>
+                        <li>Ideal for one-time cleanups</li>
+                        <li>No long-term commitment required</li>
+                    </ul>
+                </div>
+                <div class="price-card featured">
+                    <div class="badge">Most Chosen</div>
+                    <h4>Part-Time Support</h4>
+                    <div class="price">$800</div>
+                    <p style="font-size: 0.7rem; margin-bottom: 0.5rem; opacity: 0.7;">Up to 20 hours per week</p>
+                    <ul>
+                        <li>Consistent support for daily operations</li>
+                        <li>Regular ledger updates & reconciliations</li>
+                        <li>Structured weekly progress updates</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h4>Dedicated Support</h4>
+                    <div class="price">$1,500</div>
+                    <p style="font-size: 0.7rem; margin-bottom: 0.5rem; opacity: 0.7;">Up to 40 hours per week</p>
+                    <ul>
+                        <li>Full-scale ongoing accounting support</li>
+                        <li>Complete AR/AP and invoicing control</li>
+                        <li>Integrated directly into your team</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer-bottom">
+            <span>Service Options</span>
+            <span>Ways to Collaborate</span>
+        </div>
+    </div>
 
 </body>
 </html>
