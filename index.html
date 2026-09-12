@@ -9,36 +9,81 @@
             --primary: #1a365d;
             --secondary: #2b6cb0;
             --accent: #319795;
-            --bg: #f7fafc;
+            --bg: #f8fafc;
             --card-bg: #ffffff;
             --text: #2d3748;
-            --text-light: #718096;
+            --text-light: #64748b;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 4rem 2rem; text-align: center; }
-        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        header p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 1.5rem; }
-        .btn { display: inline-block; background: white; color: var(--primary); padding: 0.75rem 1.5rem; border-radius: 5px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
-        .btn:hover { background: #e2e8f0; }
         
-        .container { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem; }
-        section { margin-bottom: 3rem; }
-        h2 { font-size: 1.75rem; color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        header { 
+            background: linear-gradient(135deg, #0f172a, var(--primary), var(--secondary)); 
+            color: white; 
+            padding: 4.5rem 1.5rem 3.5rem 1.5rem; 
+            text-align: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        header h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        header p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--secondary); }
-        .card h3 { color: var(--primary); margin-bottom: 0.25rem; }
-        .card .company { font-style: italic; color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem; }
+        .btn { 
+            display: inline-block; 
+            background: white; 
+            color: var(--primary); 
+            padding: 0.75rem 1.75rem; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, background 0.2s; 
+        }
+        .btn:hover { background: #f1f5f9; transform: translateY(-2px); }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.25rem; }
+        section { margin-bottom: 2.5rem; }
+        
+        h2 { 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            margin-bottom: 1.25rem; 
+            border-bottom: 2px solid #e2e8f0; 
+            padding-bottom: 0.4rem; 
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .card { 
+            background: var(--card-bg); 
+            padding: 1.5rem; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
+            border-left: 4px solid var(--secondary); 
+            margin-bottom: 1.25rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
+        .card h3 { color: var(--primary); font-size: 1.15rem; font-weight: 700; }
+        .card .company { font-style: italic; color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.85rem; font-weight: 500; }
         
         ul { padding-left: 1.2rem; }
-        li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+        li { margin-bottom: 0.4rem; font-size: 0.93rem; color: #475569; }
         
-        .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .tag { background: #e2e8f0; color: var(--primary); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { 
+            background: #ffffff; 
+            color: var(--primary); 
+            border: 1px solid #cbd5e1; 
+            padding: 0.4rem 0.9rem; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
         
-        footer { text-align: center; padding: 2rem; background: var(--primary); color: white; margin-top: 4rem; }
-        footer a { color: #81e6d9; text-decoration: none; }
+        footer { text-align: center; padding: 2.5rem 1.5rem; background: #0f172a; color: #94a3b8; margin-top: 3rem; font-size: 0.9rem; }
+        footer a { color: #38bdf8; text-decoration: none; font-weight: 500; }
     </style>
 </head>
 <body>
@@ -53,17 +98,20 @@
         <!-- About Section -->
         <section>
             <h2>Professional Profile</h2>
-            <p style="font-size: 1.1rem; color: var(--text);">
-                Detail-oriented and tech-savvy accounting professional with over 3 years of hands-on experience managing financial software, executing account reconciliations, processing client invoices, and ensuring accurate ledger maintenance. Proven ability to handle enterprise-level client accounts under fast-paced agency and remote setups.
-            </p>
+            <div class="card" style="border-left-color: var(--accent);">
+                <p style="color: var(--text); font-size: 0.98rem; line-height: 1.6;">
+                    Detail-oriented and tech-savvy accounting professional with over 3 years of hands-on experience managing financial software, executing account reconciliations, processing client invoices, and ensuring accurate ledger maintenance. Proven ability to handle enterprise-level client accounts under fast-paced agency and remote setups.
+                </p>
+            </div>
         </section>
 
         <!-- Experience Section -->
         <section>
             <h2>Work Experience</h2>
-            <div class="card" style="margin-bottom: 1.5rem;">
+            
+            <div class="card">
                 <h3>Client Accounting Specialist</h3>
-                <div class="company">Associa (via 5 Star VA / HireSmart Virtual Employees) | March 2026 – Present</div>
+                <div class="company">Associa (via 5 Star VA / HireSmart Virtual Employees) &bull; March 2026 – Present</div>
                 <ul>
                     <li>Execute daily client accounting operations, ledger maintenance, and financial reporting within enterprise accounting systems (C3 platform via Citrix).</li>
                     <li>Process and manage client invoices, reconcile billing discrepancies, and handle accounts receivable/payable workflows with high accuracy.</li>
@@ -71,9 +119,9 @@
                 </ul>
             </div>
 
-            <div class="card" style="margin-bottom: 1.5rem;">
+            <div class="card">
                 <h3>QuickBooks Subject Matter Expert</h3>
-                <div class="company">Financial Services Support Agency | November 2024 – February 2026</div>
+                <div class="company">Financial Services Support Agency &bull; November 2024 – February 2026</div>
                 <ul>
                     <li>Supported clients with comprehensive ledger corrections, account reconciliations, and invoice tracking within QuickBooks Online and Desktop.</li>
                     <li>Collaborated with cross-functional teams to resolve complex discrepancies in billing and payment records.</li>
@@ -82,7 +130,7 @@
 
             <div class="card">
                 <h3>QuickBooks Technical Support Specialist</h3>
-                <div class="company">Software Support Services | August 2021 – October 2024</div>
+                <div class="company">Software Support Services &bull; August 2021 – October 2024</div>
                 <ul>
                     <li>Resolved 100+ monthly QuickBooks discrepancies including bank feeds, payroll errors, and misclassified transactions.</li>
                     <li>Trained small business owners on foundational bookkeeping principles, expense tracking, and financial reporting.</li>
@@ -93,12 +141,12 @@
         <!-- Technical Stack / Skills -->
         <section>
             <h2>Core Tech Stack & Tools</h2>
-            <div class="skills-wrap">
+            <div class="skills-grid">
                 <span class="tag">QuickBooks Online & Desktop</span>
                 <span class="tag">C3 Platform (Citrix)</span>
                 <span class="tag">Strongroom (Avid)</span>
                 <span class="tag">Workday</span>
-                <span class="tag">Microsoft Excel (PivotTables/Formulas)</span>
+                <span class="tag">Microsoft Excel</span>
                 <span class="tag">Salesforce</span>
                 <span class="tag">Amazon Connect</span>
                 <span class="tag">Slack</span>
@@ -108,8 +156,8 @@
     </div>
 
     <footer>
-        <p>Contact: <a href="mailto:khevinsalandron@gmail.com">khevinsalandron@gmail.com</a> | Location: Cabucgayan, Biliran, Philippines</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;">&copy; 2026 Khevin Salandron. All rights reserved.</p>
+        <p>Email: <a href="mailto:khevinsalandron@gmail.com">khevinsalandron@gmail.com</a> &bull; Location: Cabucgayan, Biliran, Philippines</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Khevin Salandron. All rights reserved.</p>
     </footer>
 
 </body>
