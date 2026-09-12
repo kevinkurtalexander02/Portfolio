@@ -37,8 +37,8 @@
         }
 
         .feedback-trigger-btn {
-            background: #f6f1d3;
-            color: #111;
+            background: #f7f1d4;
+            color: #3d311b;
             border: none;
             padding: 8px 14px;
             border-radius: 20px;
@@ -64,13 +64,13 @@
             padding: 0 16px;
         }
 
+        /* Slide Themes */
         .slide {
             position: absolute;
             top: 0;
             left: 16px;
             right: 16px;
             height: 100%;
-            background-color: #f6f1d3;
             border-radius: 20px;
             padding: 28px 24px;
             display: flex;
@@ -83,6 +83,48 @@
             opacity: 0;
             pointer-events: none;
             transform: translateY(30px) scale(0.95);
+        }
+
+        /* Yellow Theme Slides */
+        .slide.theme-yellow {
+            background-color: #f7f1d4;
+            color: #3d311b;
+        }
+        .slide.theme-yellow .slide-header,
+        .slide.theme-yellow .meta-footer,
+        .slide.theme-yellow p,
+        .slide.theme-yellow h1,
+        .slide.theme-yellow h2,
+        .slide.theme-yellow .stat-num,
+        .slide.theme-yellow .stat-label {
+            color: #3d311b;
+        }
+        .slide.theme-yellow .meta-footer {
+            border-top: 1px solid rgba(61,49,27,0.15);
+        }
+        .slide.theme-yellow .stat-box {
+            background: rgba(61,49,27,0.05);
+        }
+
+        /* Brown Theme Slides */
+        .slide.theme-brown {
+            background-color: #3d311b;
+            color: #f7f1d4;
+        }
+        .slide.theme-brown .slide-header,
+        .slide.theme-brown .meta-footer,
+        .slide.theme-brown p,
+        .slide.theme-brown h1,
+        .slide.theme-brown h2,
+        .slide.theme-brown .stat-num,
+        .slide.theme-brown .stat-label {
+            color: #f7f1d4;
+        }
+        .slide.theme-brown .meta-footer {
+            border-top: 1px solid rgba(247,241,212,0.2);
+        }
+        .slide.theme-brown .stat-box {
+            background: rgba(247,241,212,0.08);
         }
 
         .slide.active {
@@ -110,7 +152,7 @@
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #555;
+            opacity: 0.8;
             margin-bottom: 12px;
         }
 
@@ -120,35 +162,32 @@
             flex-direction: column;
             justify-content: center;
             overflow-y: auto;
-            max-height: 480px;
+            max-height: 460px;
             padding-right: 2px;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 800;
             line-height: 1.15;
-            margin-bottom: 16px;
-            color: #111;
+            margin-bottom: 14px;
         }
 
         h2 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 10px;
-            color: #111;
         }
 
         p {
             font-size: 13px;
             line-height: 1.4;
-            color: #333;
             margin-bottom: 10px;
+            opacity: 0.9;
         }
 
         .meta-footer {
-            border-top: 1px solid rgba(0,0,0,0.1);
             padding-top: 12px;
             display: flex;
             justify-content: space-between;
@@ -156,57 +195,80 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #444;
+            opacity: 0.85;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 8px;
             margin-top: 10px;
         }
 
         .stat-box {
-            background: rgba(0,0,0,0.03);
             padding: 8px;
             border-radius: 10px;
             text-align: center;
         }
 
         .stat-num {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 800;
-            color: #111;
         }
 
         .stat-label {
             font-size: 9px;
-            color: #555;
             margin-top: 2px;
+            opacity: 0.8;
+        }
+
+        /* Skills/Tools Grid layout matching Canva style */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .skill-item h4 {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .skill-item p {
+            font-size: 11px;
+            line-height: 1.3;
+            opacity: 0.75;
         }
 
         /* Feedback Wall styling inside Slide 7 */
         .feedback-wall {
-            margin-top: 10px;
-            max-height: 150px;
+            margin-top: 8px;
+            max-height: 120px;
             overflow-y: auto;
-            background: rgba(0,0,0,0.04);
+            background: rgba(0,0,0,0.15);
             border-radius: 8px;
             padding: 8px;
         }
 
+        .slide.theme-yellow .feedback-wall {
+            background: rgba(61,49,27,0.06);
+        }
+
         .feedback-item {
             font-size: 11px;
-            background: #fff;
+            background: rgba(255,255,255,0.9);
+            color: #3d311b;
             padding: 6px 8px;
             border-radius: 6px;
             margin-bottom: 6px;
-            border-left: 3px solid #111;
+            border-left: 3px solid #3d311b;
         }
 
         .feedback-item strong {
             display: block;
-            color: #111;
+            color: #3d311b;
             font-size: 10px;
             margin-bottom: 2px;
         }
@@ -221,8 +283,8 @@
         }
 
         .nav-btn {
-            background: #2a2a2a;
-            color: #f6f1d3;
+            background: #f7f1d4;
+            color: #3d311b;
             border: none;
             width: 44px;
             height: 44px;
@@ -237,7 +299,7 @@
         }
 
         .nav-btn:hover {
-            background: #3a3a3a;
+            background: #e6dfc2;
             transform: scale(1.05);
         }
 
@@ -271,7 +333,8 @@
         }
 
         .modal-card {
-            background: #f6f1d3;
+            background: #f7f1d4;
+            color: #3d311b;
             width: 90%;
             max-width: 400px;
             padding: 24px;
@@ -289,19 +352,18 @@
             font-size: 20px;
             font-weight: 800;
             margin-bottom: 12px;
-            color: #111;
         }
 
         .modal-card input, .modal-card textarea {
             width: 100%;
             padding: 10px 12px;
             margin-bottom: 12px;
-            border: 1px solid rgba(0,0,0,0.2);
+            border: 1px solid rgba(61,49,27,0.2);
             border-radius: 8px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 13px;
             background: #fff;
-            color: #111;
+            color: #3d311b;
             outline: none;
         }
 
@@ -331,8 +393,8 @@
         }
 
         .modal-btn.submit {
-            background: #111;
-            color: #f6f1d3;
+            background: #3d311b;
+            color: #f7f1d4;
         }
     </style>
 </head>
@@ -344,13 +406,14 @@
     </div>
 
     <div class="presentation-container" id="slider">
-        <!-- Slide 1 -->
-        <div class="slide active" data-index="0">
+        <!-- Slide 1 (Yellow Theme) -->
+        <div class="slide theme-yellow active" data-index="0">
             <div class="slide-header">
                 <span>Services Proposal</span>
                 <span>Version 1.0</span>
             </div>
             <div class="slide-body">
+                <span style="font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; opacity: 0.7;">Virtual Assistant</span>
                 <h1>Hi, I'm Khevin.</h1>
                 <p>I keep client financials, ledgers, and accounts running smoothly and accurately.</p>
             </div>
@@ -361,8 +424,8 @@
             </div>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="slide" data-index="1">
+        <!-- Slide 2 (Yellow Theme) -->
+        <div class="slide theme-yellow" data-index="1">
             <div class="slide-header">
                 <span>About Me</span>
                 <span>02 / 07</span>
@@ -387,50 +450,65 @@
             </div>
             <div class="meta-footer">
                 <span>Professional Overview</span>
+                <span>About Me</span>
             </div>
         </div>
 
-        <!-- Slide 3 -->
-        <div class="slide" data-index="2">
+        <!-- Slide 3 (Brown Theme matching Canva screenshot) -->
+        <div class="slide theme-brown" data-index="2">
             <div class="slide-header">
-                <span>Core Expertise</span>
+                <span>Virtual Assistant</span>
                 <span>03 / 07</span>
             </div>
             <div class="slide-body">
-                <h2>What I Bring to Your Team</h2>
-                <p>Equipped with specialized capabilities tailored to streamline your financial operations:</p>
+                <h2 style="margin-bottom: 12px;">My Skills & Tools</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>Ledger Cleanups</h4>
+                        <p>Comprehensive catch-up bookkeeping, account reconciliations, and adjustments.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Accounting Platforms</h4>
+                        <p>Advanced navigation via QuickBooks and C3 Citrix financial environments.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Invoice Tracking</h4>
+                        <p>Precise monitoring of reimbursements, billings, and payment entries.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Data & Excel</h4>
+                        <p>Advanced reporting, spreadsheet setups, and workflow automation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-footer">
+                <span>Experience</span>
+                <span>My Skills & Tools</span>
+            </div>
+        </div>
+
+        <!-- Slide 4 (Yellow Theme) -->
+        <div class="slide theme-yellow" data-index="3">
+            <div class="slide-header">
+                <span>Services Overview</span>
+                <span>04 / 07</span>
+            </div>
+            <div class="slide-body">
+                <h2>Workflow & Services</h2>
                 <p>✔ Comprehensive ledger cleanups and routine reconciliations.<br>
                 ✔ Advanced workflow navigation via QuickBooks and C3 systems.<br>
                 ✔ Precise invoice and reimbursement tracking.</p>
             </div>
             <div class="meta-footer">
-                <span>Core Competencies</span>
+                <span>Services</span>
+                <span>What I Do</span>
             </div>
         </div>
 
-        <!-- Slide 4 -->
-        <div class="slide" data-index="3">
+        <!-- Slide 5 (Yellow Theme) -->
+        <div class="slide theme-yellow" data-index="4">
             <div class="slide-header">
-                <span>Workflow & Tech</span>
-                <span>04 / 07</span>
-            </div>
-            <div class="slide-body">
-                <h2>Software & Tools</h2>
-                <p>Seamless integration into your current tech stack with minimal onboarding friction:</p>
-                <p>• Intuit QuickBooks Specialist<br>
-                • Citrix / C3 Platform Operations<br>
-                • Microsoft Excel Advanced Data Tracking<br>
-                • Virtual Assistant Workflow Management</p>
-            </div>
-            <div class="meta-footer">
-                <span>Technical Stack</span>
-            </div>
-        </div>
-
-        <!-- Slide 5 -->
-        <div class="slide" data-index="4">
-            <div class="slide-header">
-                <span>Value Proposition</span>
+                <span>Why Work With Me</span>
                 <span>05 / 07</span>
             </div>
             <div class="slide-body">
@@ -438,43 +516,48 @@
                 <p>By delegating your day-to-day accounting backlog and ledger maintenance, you free up valuable time to focus on scaling your business and serving your primary clients.</p>
             </div>
             <div class="meta-footer">
-                <span>Efficiency & Growth</span>
+                <span>Trusted Support</span>
+                <span>Why Work With Me</span>
             </div>
         </div>
 
-        <!-- Slide 6 -->
-        <div class="slide" data-index="5">
+        <!-- Slide 6 (Brown Theme) -->
+        <div class="slide theme-brown" data-index="5">
             <div class="slide-header">
-                <span>Engagement</span>
+                <span>Engagement Options</span>
                 <span>06 / 07</span>
             </div>
             <div class="slide-body">
-                <h2>Ready to Collaborate?</h2>
-                <p>Let's discuss how we can align our schedules and customize an engagement framework that matches your operational needs.</p>
+                <h2>Flexible Packages</h2>
+                <p style="font-size: 12px; margin-bottom: 8px;">• <strong>Hourly Support ($12/hr):</strong> Ideal for project-based audits or extra hands.<br>
+                • <strong>Part-Time Support ($800/mo):</strong> Up to 20 hours/week of dedicated ledger maintenance.<br>
+                • <strong>Dedicated Support ($1,500/mo):</strong> Comprehensive full-scope accounting and virtual assistant operations.</p>
             </div>
             <div class="meta-footer">
-                <span>Next Steps</span>
+                <span>Service Options</span>
+                <span>Ways to Collaborate</span>
             </div>
         </div>
 
-        <!-- Slide 7 (Includes Live Feedback Wall) -->
-        <div class="slide" data-index="6">
+        <!-- Slide 7 (Yellow Theme + Live Feedback Wall) -->
+        <div class="slide theme-yellow" data-index="6">
             <div class="slide-header">
                 <span>Conclusion & Feedback</span>
                 <span>07 / 07</span>
             </div>
             <div class="slide-body">
                 <h2>Let's Get Started.</h2>
-                <p>Reach out to schedule a quick kickoff session. Check out live feedback submitted by viewers below:</p>
+                <p style="font-size: 12px; margin-bottom: 6px;">Check out live feedback submitted by viewers below:</p>
                 <div class="feedback-wall" id="feedbackWall">
                     <div class="feedback-item">
                         <strong>Anonymous • Just now</strong>
-                        Clean presentation layout and solid accounting background!
+                        Clean dual-tone presentation layout and solid accounting overview!
                     </div>
                 </div>
             </div>
             <div class="meta-footer">
                 <span>Khevin Salandron • 2026</span>
+                <span>Contact</span>
             </div>
         </div>
     </div>
@@ -529,7 +612,6 @@
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            // Do not trigger page switches if typing in the feedback modal inputs
             if (document.getElementById('feedbackModal').classList.contains('open')) return;
 
             if (e.key === 'ArrowRight' || e.key === 'PageDown') {
@@ -594,11 +676,11 @@
             // Close modal and reset fields
             toggleModal(false);
 
-            // Optionally jump directly to Slide 7 to showcase the newly added entry
+            // Jump directly to Slide 7 to showcase the newly added entry
             updateSlide(totalSlides - 1, 1);
         }
 
-        // Simple helper to prevent HTML injection attacks from user input
+        // Simple helper to prevent HTML injection attacks
         function escapeHtml(str) {
             return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
         }
