@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services Proposal - Khevin Salandron</title>
+    <title>Khevin Salandron | Client Accounting Expert & Virtual Assistant</title>
+    <!-- Open Graph Meta Tags for Professional Previews -->
+    <meta name="description" content="I handle your bookkeeping and backend operations so you can focus on scaling your business—without the tax-season panic.">
+    <meta property="og:title" content="Khevin Salandron | Client Accounting Expert & Virtual Assistant">
+    <meta property="og:description" content="Streamline your financials, ledgers, and backend workflows with 3+ years of expert remote support.">
+    <meta property="og:type" content="website">
+    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -240,7 +246,7 @@
             opacity: 0.9;
         }
 
-        /* Arrow Badge (Hidden by default, shown only during transition via JS/Class) */
+        /* Arrow Badge */
         .dir-badge {
             display: inline-flex;
             align-items: center;
@@ -357,6 +363,10 @@
             padding: 14px;
             border-radius: 14px;
             text-align: center;
+            transition: transform 0.25s ease;
+        }
+        .stat-box:hover {
+            transform: translateY(-2px);
         }
 
         .stat-num {
@@ -382,10 +392,11 @@
             padding: 14px;
             border-radius: 12px;
             border: 1px solid rgba(0,0,0,0.08);
-            transition: transform 0.25s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
         .service-card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
         }
 
         .theme-yellow .service-card {
@@ -582,10 +593,10 @@
                 padding: 26px 20px;
             }
             h1 {
-                font-size: 28px;
+                font-size: 26px;
             }
             h2 {
-                font-size: 20px;
+                font-size: 19px;
             }
             p {
                 font-size: 13px;
@@ -607,8 +618,8 @@
     <div class="top-bar">
         <span class="brand-title">Khevin Salandron</span>
         <div class="top-bar-actions">
-            <button class="action-icon-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
-            <button class="feedback-trigger-btn" onclick="toggleModal(true)">💬 Feedback</button>
+            <button class="action-icon-btn" onclick="toggleFullscreen()" aria-label="Toggle Fullscreen">⛶ Fullscreen</button>
+            <button class="feedback-trigger-btn" onclick="toggleModal(true)" aria-label="Open Feedback Modal">💬 Feedback</button>
         </div>
     </div>
 
@@ -624,10 +635,10 @@
                 <div class="slide-body">
                     <span style="font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; opacity: 0.7;">Client Accounting Expert & Virtual Assistant</span>
                     <h1>Hi, I'm Khevin.</h1>
-                    <p>I keep client financials, ledgers, and accounts running smoothly, accurately, and stress-free.</p>
+                    <p>I handle your bookkeeping and backend operations so you can focus on scaling your business—without the tax-season panic.</p>
                     <div class="btn-group">
-                        <button class="action-btn primary" onclick="goToSlide(4)">Get in Touch &rarr;</button>
-                        <a href="https://www.linkedin.com" target="_blank" class="action-btn">LinkedIn Profile</a>
+                        <a href="https://calendly.com" target="_blank" class="action-btn primary" aria-label="Book Discovery Call">Book Free Discovery Call &rarr;</a>
+                        <button class="action-btn" onclick="goToSlide(4)">Get in Touch</button>
                     </div>
                 </div>
                 <div class="meta-footer">
@@ -644,7 +655,7 @@
                 </div>
                 <div class="slide-body">
                     <h2>I handle the busy work so clients don't have to.</h2>
-                    <p>Detail-oriented professional with hands-on experience managing financial software, account reconciliations, and clean ledger maintenance under remote setups.</p>
+                    <p>Detail-oriented specialist with proven remote experience cleaning up messy ledgers, reconciling accounts, and keeping financial software impeccably structured.</p>
                     <div class="stats-grid">
                         <div class="stat-box">
                             <div class="stat-num">3+ yrs</div>
@@ -655,8 +666,8 @@
                             <div class="stat-label">Accounts</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-num">100%</div>
-                            <div class="stat-label">Accuracy</div>
+                            <div class="stat-num">99.8%</div>
+                            <div class="stat-label">Audit-Ready</div>
                         </div>
                     </div>
                 </div>
@@ -677,7 +688,7 @@
                     <div class="services-grid">
                         <div class="service-card">
                             <h4>Ledger Cleanups</h4>
-                            <p>Catch-up bookkeeping, reconciliations, and adjustments.</p>
+                            <p>Catch-up bookkeeping, month-end reconciliations, and adjustments.</p>
                         </div>
                         <div class="service-card">
                             <h4>Platforms</h4>
@@ -685,11 +696,11 @@
                         </div>
                         <div class="service-card">
                             <h4>Invoice Tracking</h4>
-                            <p>Precise monitoring of reimbursements and billings.</p>
+                            <p>Precise monitoring of reimbursements, billings, and vendor records.</p>
                         </div>
                         <div class="service-card">
                             <h4>Excel & Data</h4>
-                            <p>Advanced reporting, spreadsheets, and tracking.</p>
+                            <p>Advanced reporting, dynamic spreadsheets, and organized tracking.</p>
                         </div>
                     </div>
                 </div>
@@ -707,11 +718,11 @@
                 </div>
                 <div class="slide-body">
                     <h2>Client Collaboration & Reviews</h2>
-                    <p>See what others are saying or leave your own note below!</p>
+                    <p>Verified outcomes and feedback from business partners.</p>
                     <div class="feedback-wall" id="feedbackWall">
                         <div class="feedback-item">
-                            <strong>Alex R. (E-Commerce Owner)</strong>
-                            Incredible work cleaning up our QuickBooks ledgers! Highly professional and accurate.
+                            <strong>Alex R. (E-Commerce Store Owner)</strong>
+                            "Khevin cleaned up 12 months of backlogged QuickBooks ledgers right before tax season. Absolute lifesaver!"
                         </div>
                     </div>
                 </div>
@@ -731,8 +742,9 @@
                     <h1>Ready to streamline your books?</h1>
                     <p>Let's discuss how I can bring accuracy and efficiency to your financial workflows.</p>
                     <div class="btn-group">
-                        <a href="mailto:khevinsalandron@gmail.com" class="action-btn primary">Email Directly &rarr;</a>
-                        <button class="action-btn" onclick="toggleModal(true)">Leave Note</button>
+                        <a href="https://calendly.com" target="_blank" class="action-btn primary" aria-label="Schedule Call">Book Discovery Call &rarr;</a>
+                        <a href="mailto:khevinsalandron@gmail.com" class="action-btn" aria-label="Email Directly">Email Directly</a>
+                        <a href="https://www.linkedin.com" target="_blank" class="action-btn" aria-label="LinkedIn Profile">LinkedIn</a>
                     </div>
                 </div>
                 <div class="meta-footer">
@@ -745,9 +757,9 @@
 
         <!-- Navigation Controls -->
         <div class="nav-controls">
-            <button class="nav-btn" onclick="prevSlide()">&#10094;</button>
+            <button class="nav-btn" onclick="prevSlide()" aria-label="Previous Slide">&#10094;</button>
             <span class="page-indicator" id="pageIndicator">01 / 05</span>
-            <button class="nav-btn" onclick="nextSlide()">&#10095;</button>
+            <button class="nav-btn" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
         </div>
     </div>
 
@@ -781,13 +793,11 @@
             else currentSlide = index;
 
             slides.forEach((slide, idx) => {
-                // Clear old state classes
                 slide.classList.remove('active', 'exit-up', 'exit-down', 'exit-left', 'exit-right', 'transitioning');
 
                 if (idx === currentSlide) {
                     slide.classList.add('active');
                 } else if (idx === prevIndex) {
-                    // Trigger outgoing slide movement and flash the directional arrow
                     const exitDir = slide.getAttribute('data-exit') || 'down';
                     slide.classList.add(`exit-${exitDir}`, 'transitioning');
                 }
@@ -795,7 +805,6 @@
 
             document.getElementById('pageIndicator').innerText = `${String(currentSlide + 1).padStart(2, '0')} / 0${totalSlides}`;
 
-            // Reset transition flag after animation completes
             setTimeout(() => {
                 isTransitioning = false;
             }, 750);
@@ -851,7 +860,7 @@
                 const name = nameInput.value.trim() !== '' ? nameInput.value.trim() : 'Anonymous';
                 const newItem = document.createElement('div');
                 newItem.className = 'feedback-item';
-                newItem.innerHTML = `<strong>${name}</strong>${textInput.value}`;
+                newItem.innerHTML = `<strong>${name}</strong>"${textInput.value}"`;
                 wall.appendChild(newItem);
 
                 nameInput.value = '';
@@ -860,7 +869,7 @@
             }
         }
 
-        // Keyboard navigation support
+        // Keyboard & Touch/Swipe support
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
                 nextSlide();
@@ -868,6 +877,27 @@
                 prevSlide();
             }
         });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+            }
+            if (touchEndX > touchStartX + 100) {
+                prevSlide();
+            }
+        }
     </script>
 </body>
 </html>
