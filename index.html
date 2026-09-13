@@ -11,6 +11,11 @@
     <meta property="og:type" content="website">
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon CDNs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
     <style>
         * {
             box-sizing: border-box;
@@ -147,7 +152,6 @@
             flex-direction: column;
             justify-content: space-between;
             
-            /* Smooth Cinematic Transitions */
             transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
                         opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
             opacity: 0;
@@ -246,7 +250,6 @@
             opacity: 0.9;
         }
 
-        /* Arrow Badge */
         .dir-badge {
             display: inline-flex;
             align-items: center;
@@ -279,20 +282,20 @@
             font-size: 38px;
             font-weight: 800;
             line-height: 1.15;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         h2 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         p {
-            font-size: 15px;
-            line-height: 1.5;
-            margin-bottom: 14px;
+            font-size: 14px;
+            line-height: 1.45;
+            margin-bottom: 10px;
             opacity: 0.9;
         }
 
@@ -301,7 +304,7 @@
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
-            margin-top: 14px;
+            margin-top: 12px;
         }
 
         .action-btn {
@@ -311,7 +314,7 @@
             background: transparent;
             color: #3d311b;
             border: 2px solid #3d311b;
-            padding: 10px 18px;
+            padding: 9px 16px;
             border-radius: 24px;
             font-size: 13px;
             font-weight: 700;
@@ -342,7 +345,7 @@
         }
 
         .meta-footer {
-            padding-top: 14px;
+            padding-top: 12px;
             display: flex;
             justify-content: space-between;
             font-size: 12px;
@@ -355,13 +358,13 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-top: 12px;
+            gap: 12px;
+            margin-top: 10px;
         }
 
         .stat-box {
-            padding: 14px;
-            border-radius: 14px;
+            padding: 12px;
+            border-radius: 12px;
             text-align: center;
             transition: transform 0.25s ease;
         }
@@ -370,13 +373,13 @@
         }
 
         .stat-num {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
         }
 
         .stat-label {
             font-size: 11px;
-            margin-top: 4px;
+            margin-top: 2px;
             opacity: 0.8;
         }
 
@@ -384,19 +387,19 @@
         .services-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-top: 10px;
+            gap: 10px;
+            margin-top: 6px;
         }
 
         .service-card {
-            padding: 14px;
-            border-radius: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
             border: 1px solid rgba(0,0,0,0.08);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
         .service-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
         .theme-yellow .service-card {
@@ -410,34 +413,62 @@
         }
 
         .service-card h4 {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .service-card p {
-            font-size: 12px;
-            line-height: 1.4;
+            font-size: 11px;
+            line-height: 1.3;
             margin-bottom: 0;
             opacity: 0.75;
         }
 
+        /* Tech Stack Icon Bar with QuickBooks and Tools */
+        .tech-stack-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 10px;
+            padding: 8px 14px;
+            background: rgba(61,49,27,0.06);
+            border-radius: 12px;
+            width: fit-content;
+        }
+        .theme-brown .tech-stack-row {
+            background: rgba(247,241,212,0.08);
+        }
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .tech-item i {
+            font-size: 20px;
+        }
+
         /* Feedback Wall */
         .feedback-wall {
-            margin-top: 10px;
-            max-height: 170px;
+            margin-top: 8px;
+            max-height: 150px;
             overflow-y: auto;
             border-radius: 8px;
             padding-right: 6px;
         }
 
         .feedback-item {
-            font-size: 13px;
+            font-size: 12px;
             background: rgba(255,255,255,0.95);
             color: #3d311b;
-            padding: 10px 14px;
+            padding: 9px 12px;
             border-radius: 10px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             border-left: 4px solid #3d311b;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
@@ -445,7 +476,7 @@
         .feedback-item strong {
             display: block;
             color: #3d311b;
-            font-size: 12px;
+            font-size: 11px;
             margin-bottom: 2px;
         }
 
@@ -596,7 +627,7 @@
                 font-size: 26px;
             }
             h2 {
-                font-size: 19px;
+                font-size: 18px;
             }
             p {
                 font-size: 13px;
@@ -618,8 +649,8 @@
     <div class="top-bar">
         <span class="brand-title">Khevin Salandron</span>
         <div class="top-bar-actions">
-            <button class="action-icon-btn" onclick="toggleFullscreen()" aria-label="Toggle Fullscreen">⛶ Fullscreen</button>
-            <button class="feedback-trigger-btn" onclick="toggleModal(true)" aria-label="Open Feedback Modal">💬 Feedback</button>
+            <button class="action-icon-btn" onclick="toggleFullscreen()" aria-label="Toggle Fullscreen"><i class="fa-solid fa-expand"></i> Fullscreen</button>
+            <button class="feedback-trigger-btn" onclick="toggleModal(true)" aria-label="Open Feedback Modal"><i class="fa-solid fa-comment-dots"></i> Feedback</button>
         </div>
     </div>
 
@@ -637,8 +668,8 @@
                     <h1>Hi, I'm Khevin.</h1>
                     <p>I handle your bookkeeping and backend operations so you can focus on scaling your business—without the tax-season panic.</p>
                     <div class="btn-group">
-                        <a href="https://calendly.com" target="_blank" class="action-btn primary" aria-label="Book Discovery Call">Book Free Discovery Call &rarr;</a>
-                        <button class="action-btn" onclick="goToSlide(4)">Get in Touch</button>
+                        <a href="https://calendly.com" target="_blank" class="action-btn primary" aria-label="Book Discovery Call"><i class="fa-regular fa-calendar-check"></i> Book Free Discovery Call &rarr;</a>
+                        <button class="action-btn" onclick="goToSlide(4)"><i class="fa-solid fa-paper-plane"></i> Get in Touch</button>
                     </div>
                 </div>
                 <div class="meta-footer">
@@ -687,21 +718,28 @@
                     <h2>Services & Technical Stack</h2>
                     <div class="services-grid">
                         <div class="service-card">
-                            <h4>Ledger Cleanups</h4>
+                            <h4><i class="fa-solid fa-broom" style="color: #2ca01c;"></i> Ledger Cleanups</h4>
                             <p>Catch-up bookkeeping, month-end reconciliations, and adjustments.</p>
                         </div>
                         <div class="service-card">
-                            <h4>Platforms</h4>
-                            <p>QuickBooks & C3 Citrix financial environments.</p>
+                            <h4><i class="fa-solid fa-desktop" style="color: #0078d4;"></i> C3 Citrix Systems</h4>
+                            <p>Managing financial workflows and secure remote operations.</p>
                         </div>
                         <div class="service-card">
-                            <h4>Invoice Tracking</h4>
-                            <p>Precise monitoring of reimbursements, billings, and vendor records.</p>
+                            <h4><i class="fa-solid fa-file-invoice-dollar" style="color: #e37222;"></i> Invoice Tracking</h4>
+                            <p>Precise monitoring of reimbursements, billings, and records.</p>
                         </div>
                         <div class="service-card">
-                            <h4>Excel & Data</h4>
-                            <p>Advanced reporting, dynamic spreadsheets, and organized tracking.</p>
+                            <h4><i class="devicon-microsoftexcel-plain colored"></i> Advanced Excel</h4>
+                            <p>Dynamic reporting, financial modeling, and organized data tracking.</p>
                         </div>
+                    </div>
+                    <!-- Tool Icon Bar featuring QuickBooks, Excel, GitHub, Citrix -->
+                    <div class="tech-stack-row">
+                        <div class="tech-item" title="Intuit QuickBooks"><i class="fa-solid fa-calculator" style="color: #2ca01c;"></i> QuickBooks</div>
+                        <div class="tech-item" title="Microsoft Excel"><i class="devicon-microsoftexcel-plain colored"></i> Excel</div>
+                        <div class="tech-item" title="Citrix C3"><i class="fa-solid fa-server" style="color: #0078d4;"></i> Citrix C3</div>
+                        <div class="tech-item" title="GitHub"><i class="devicon-github-original"></i> GitHub</div>
                     </div>
                 </div>
                 <div class="meta-footer">
@@ -742,9 +780,9 @@
                     <h1>Ready to streamline your books?</h1>
                     <p>Let's discuss how I can bring accuracy and efficiency to your financial workflows.</p>
                     <div class="btn-group">
-                        <a href="https://calendly.com" target="_blank" class="action-btn primary" aria-label="Schedule Call">Book Discovery Call &rarr;</a>
-                        <a href="mailto:khevinsalandron@gmail.com" class="action-btn" aria-label="Email Directly">Email Directly</a>
-                        <a href="https://www.linkedin.com" target="_blank" class="action-btn" aria-label="LinkedIn Profile">LinkedIn</a>
+                        <a href="https://calendly.com" target="_blank" class="action-btn primary" aria-label="Schedule Call"><i class="fa-regular fa-calendar-check"></i> Book Discovery Call &rarr;</a>
+                        <a href="mailto:khevinsalandron@gmail.com" class="action-btn" aria-label="Email Directly"><i class="fa-solid fa-envelope"></i> Email Directly</a>
+                        <a href="https://www.linkedin.com" target="_blank" class="action-btn" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                     </div>
                 </div>
                 <div class="meta-footer">
