@@ -15,7 +15,6 @@
     --text: #f4f4f0;
     --text-soft: #a9a9a2;
     --yellow: #f3c200;
-    --hero-bg: url("HERO_BG_DATA_URI");
     --display: 'Space Grotesk', sans-serif;
     --mono: 'IBM Plex Mono', 'Courier New', monospace;
     --sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -114,26 +113,11 @@
   /* ---------- Hero ---------- */
   .hero{
     position: relative;
-    padding: 130px 0 0;
-    min-height: 640px;
+    padding: 130px 0 60px;
+    min-height: 500px;
     display: flex;
     align-items: center;
-    background-image: var(--hero-bg);
-    background-size: cover;
-    background-position: center right;
     overflow: hidden;
-  }
-  .hero::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg,
-      rgba(13,13,13,0.98) 0%,
-      rgba(13,13,13,0.94) 34%,
-      rgba(13,13,13,0.62) 58%,
-      rgba(13,13,13,0.18) 78%,
-      rgba(13,13,13,0.05) 100%);
-    z-index: 0;
   }
   .hero::after{
     content: "";
@@ -147,29 +131,6 @@
     position: relative;
     z-index: 1;
     width: 100%;
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .portrait-frame {
-    position: relative;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background: var(--bg-raised);
-  }
-
-  .portrait-frame img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
   }
 
   .hero-text{ text-align: left; max-width: 640px; }
@@ -213,14 +174,7 @@
   }
 
   @media (max-width: 820px){
-    .hero{ min-height: 0; padding-top: 110px; background-position: center 15%; }
-    .hero-grid{ grid-template-columns: 1fr; }
-    .hero::before{
-      background: linear-gradient(180deg,
-        rgba(13,13,13,0.72) 0%,
-        rgba(13,13,13,0.88) 55%,
-        rgba(13,13,13,0.98) 80%);
-    }
+    .hero{ min-height: 0; padding-top: 110px; }
     .hero-text{ text-align: left; max-width: 100%; }
     .hero-desc{ margin-left: 0; margin-right: 0; }
     .hero-actions{ justify-content: flex-start; }
@@ -367,41 +321,6 @@
     .cap-row{ grid-template-columns: 1fr; }
   }
 
-  /* ---------- Specs grid ---------- */
-  .spec-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    margin-top: 46px;
-    border: 1px solid var(--line);
-  }
-  .spec-cell{
-    background: var(--bg);
-    padding: 28px 24px;
-  }
-  .spec-label{
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--yellow);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin: 0 0 8px;
-  }
-  .spec-name{
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: 1.02rem;
-    margin: 0 0 6px;
-  }
-  .spec-desc{ color: var(--text-soft); font-size: 0.9rem; margin: 0; }
-  @media (max-width: 760px){
-    .spec-grid{ grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 480px){
-    .spec-grid{ grid-template-columns: 1fr; }
-  }
-
   /* ---------- Testimonials ---------- */
   .testi-grid{
     display: grid;
@@ -431,12 +350,6 @@
   @media (max-width: 900px){
     .testi-grid{ grid-template-columns: 1fr; }
   }
-  .testi-note{
-    font-family: var(--mono);
-    font-size: 11.5px;
-    color: var(--text-soft);
-    margin-top: 20px;
-  }
 
   /* ---------- Contact / CTA ---------- */
   .cta-section{
@@ -455,28 +368,6 @@
 
   /* ---------- Footer ---------- */
   footer{ padding: 60px 0 40px; }
-  .footer-grid{
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 30px;
-    padding-bottom: 40px;
-  }
-  .footer-col h4{
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-soft);
-    margin: 0 0 16px;
-  }
-  .footer-col ul{ list-style: none; margin: 0; padding: 0; }
-  .footer-col li{ margin-bottom: 10px; }
-  .footer-col a{ color: var(--text); text-decoration: none; font-size: 0.93rem; }
-  .footer-col a:hover{ color: var(--yellow); }
-  .footer-tagline{ color: var(--text-soft); font-size: 0.93rem; max-width: 30ch; }
-  @media (max-width: 700px){
-    .footer-grid{ grid-template-columns: 1fr 1fr; }
-  }
   .footer-bottom{
     display: flex;
     justify-content: space-between;
@@ -510,25 +401,17 @@
 
 <header id="top" class="hero">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <p class="hero-eyebrow reveal">BOOKKEEPING &amp; QUICKBOOKS SUPPORT</p>
-        <h1 class="reveal">Khevin</h1>
-        <p class="hero-sub reveal">Your Books. Handled.</p>
-        <p class="hero-desc reveal">
-          A tech-savvy QuickBooks specialist with 3+ years reconciling transactions, fixing broken
-          ledgers, and helping small business owners actually understand their numbers.
-        </p>
-        <div class="hero-actions reveal">
-          <a class="btn solid" href="#" target="_blank" rel="noopener">View Upwork Profile</a>
-          <a class="btn ghost" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
-        </div>
-      </div>
-      <div class="portrait-frame reveal">
-        <div class="portrait-glow"></div>
-        <span class="portrait-bracket tl"></span>
-        <span class="portrait-bracket br"></span>
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmwAAAKsCAYAAABRfeGRAAEAAElEQVR42uy9d7xcV3nu/11r1+mnV+moy5KbbHARBlyoBgIhFBNqeiEhubkhlyS/JFc25CYhNyS5CSk35ZIEU2IHCD00Yxnb2LjbsnrX6W367L7W748951iyjbHBgJ3s7+czOtLRzDl79uzZ+5l3ve/zQEZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkbGsw/BLiQgureMjIyMjP9EGNkuyMh49iOlhN1oKSVSSpRSEhC7d+/Odk5GRkbGf4pP5RkZGc/297AGJDAMxEANiFbuoLVefZ8LIXS2yzIyMjIywZaRkfEDYteuXRLgl37pl/JxHP9UtVrdFkahXywV9xjCePjv/u7vgve///2TwNIZb3oh0FrLrtDLBFxGRkZGJtgyMjK+j+9bDaC1fo0i/p3lpaUtUoiop69vTmJOAw3gALDn6NF97Vtvve3IO97xs0eEELEQQnUf+7QIt24VTwghyIRgRkZGxtOPme2CjIxn1QcoASiAX/mVXxmcnJwUn/jExzfk8/ny0PBI7+joKHv2PNR/7933nqUhNqRxWavdXmzUq62Zmdmj/+9frtxXrOQOturenUAbqD4dH966S626+/czlmG/k9bLXvaMjIyMp+cCkZGR8f17zwlAdUXOk/oBb33rW9ccPXrohWsmxi654oVXWIVCfoMU4pKlan1gcbHG0aOHuf222yn3VPDaHTZt3qSVViqJVXvT1i21/kp5uu15h44ePXLkoQcevv3UqVMPAnOP/j3d4YXTRJlEdLdea726vUIIlFK9e/fuHXvxi1+oZ2eXjwoh/JX7SSkBzvhZT7RPTt8P3Yrdo7+XibyMjIxMsGVkZHzfkEIIJWUqfFY0SBzHQghhlMvO+sGRkc25fF522h2CTkCns0wcp/fr6+tjx44tol5vnNdqt147OTm5ad3EekNKacVJmFuzZr1x4uQknudRLBbo7emjt6+XkZERNm/ezPiacSzDZHx8PNqwcYP3wAMP1D5x4yeOHz9+7LZ9+/bef+TI8Va+ZLN169nsvX8vYRLy3EufS8FxuOWW2894IuPj42zatI6DB48Shl7+X/7lw+e86lVXb3vve38//pM/+bP7m83mkVKpFI6MDHLo0FEArrrqKmZnJzEMeOlLX8GP/ujrqldcccW9QohgRZw9WrQ+WjQCvPGNbzRuuOEGlQm3jIyMTLBlZGQ8rWitRVdg9HHmMqALXLxmYmSrHwZndzr+RpUkzllbtxCHEcePn8DzQiqVAlorarWOKJWs0uDQ8LhAVLSGdqdFq9VmaGiMvv5+Cvkcs3PzHD12FNe2GRsbp1IuUyyXcF1XD/T1i97eXtZOTOiFxcXg8KHDy5Zpzs3NzwZ33XU3551/Pjt3Xsq9d9/D4aNHmZhYywue/0K2bzuLqalTfOELX+Shhx4mDAP6+vowTcOempodetobrm3Xp33/u5v3f1f3e/p4/7163S+/+/j09/5x59/78f237fne5s2be/m/sP/mP1S5XFbf+23aef553e1v+/f5jve/f2u53L1/x3v/eS9t847z73rVveM62f+/l3b65X1339v91xve8Ym/P3p0+dOnf+v0cf3f35feT/r4+z2vM+/P08p964q69s3aN6699urv/uS8093nN/e83XvS54+N/U7e+/+p++2e+fne20eOvv39/u+l/v/3/v3y0m/efvs37/nmz2744Q9fPze/sO39/u/kzeeeP/91l32p+2v930v3T/1I7+X7Sbfb//f+d3a3vfU37m/ddf9m+rN1y6UveclXvuP2++z7925r33nr39/v6v999+9a3vfS98ve4y8vf5/yM96e949449f/u7+1+/m9fE93m3u2/uX/qffyPd37Tff4/n1p21ffu/m9/N/Xff/kS495379f8j7m9+/7+s3bvvf5sXef+/t474fuvvf5N83896l31L13y3veevp+t73tbf6bbrr1vX6/5q//5f4A5kP69/92aO/evflMvGVkZGSCLePZRw44fvwIhw4ewvc3snmzXW93E4Tgeh338OHDX39k+/bvzc/PC4AnA4601oQQUhIqA0JorS0p3fJdd5k3IQT/83//7wsPHz5aWVpaps93O1mS63b4m/7+fnp7e/C83S/duXNnpVardbc/OaC1fvwx7/03163bt8x//m9eeE/3mZ/5mXesffjhh7v3e9/73rd+/+Gf/39v332y/3u/ef/T/X2nffm8/31vO0IICoVCp79/YHLXrl21W/fsfdeffuXvXmOZZrf0IYSgt7cv/p//7V+v2r17d5s9fO/+/cve93feXvv4X75f1S+s3z4x8a9ve8dbtm/ffuz1v/eet50q4n6m9yvuvf39m6u13Lp1q0qL5s4H3/+eZ3e/p3/269O/a6//pP3xXn3y3pPf3/+O395z8e/eevd0v/O3p9vX/fve+3/v2r/m6fe/5N6XvvSll7zmNa+Z/6tf/X1/6OvfG3fNen/5V39151//1X/4u09//X89a5yP+/9n383/9S/+S3s28Iu3ve1ti+fefv/829/+tv3nnnvuy5/1rGdd0e33X/il//jyt+y++/3uH360/4mfdL/v9/6//5a/uPf36n9394v3b+vev334sXvf9Y9f2P/6/R993//x3i/s/8Lnv/S8X//9v++uM3s37/6z+3Xp937oE//y1e5j/vKrv2I/+5d+6Zfe+prXvMbo4f3+r3ff2X3S5845X/3q0u88y+/f+7v/N6e3m/P5PF998y+9/c+vepX3jF87tP6e//4ftzz+1dve9raS//vXnXX7e9/xf+4d783p//eE8yv3f2H6+Dvd4zvh/O/q3X13m3e85zUv6X3D0/iL8v7/ffv3+S/f32/m6Pvu29/X2j6//Xj/+5/3uXffp2mfl//S7/1e4A83x1u3bu2WUnR73i4QQtzs/Tfe+O6XXn3lh/mbf3vO29/7nt+0u8Pz//v4nvu/eeTvf5z3Xv3k2z1O+/x3/+434f434f434f434f434f434f3a+/+87+/d3/f01+373u1431k+xS130m3uP42pS/5pvu3J+4q3y5a/2X3y/9xve43/qffm/f7S9z/p+5/8v7/v+/0/vv2T//6eO28/f3Bwf7PZvHvvnr1fX/uCF3y001n8O6A5H/Sj/Oft//d93u2e3H1//7Xf1x14t7sN0A/37kbfd63u5/3951u2137S5x/v54839m500332x/e//L0/vnx5vH//e++445037d27eOtr3/CG9v333++O3XyTf1f33Iu9N+/33s/79/3aH332L3a4362+X//f/+cbr992/k6A3f/4/36m+/Xp+S9/xU/3+u43Xffv19vL7vf1/ve+4523T5fM9L+f+7U2/zve3/vd3711dJvef1vunXv++39eU3z1C37sO74vf31XvvA3/L3vvSdtvunvfvT0+548f3/b+7+fT9+/3+/pfn/vX3/3fO6m/eeff+600z2u0zXp35v2x3vL+dOfvPfevO/f8Xbf/1fP+43/4/2f8bdf9p/f6227v+1487f7+37v57fe+u5X/uRPvS26vXj6m+6yE/3v3aXfvOnveO9vd/92b+a1L9y4sLDgvuXnfnnlX/0/v39P/3e/o7s+s/+2o3v+3+741Svf6e+7e8eX862Xv/zlN/p27vP9T//fM9p34e4v3d/f3++4+e/37j225b1v24b8/q/981eXvv/uH5/m/e3/vveef1q2+kO3ve/x5e/J//+99/zO4f/xX3f/r3veL//K/6m9mve+33vd+9+/4+nvf+91e77f01+3X77pvu++73vve5+3u396f/2290fvea+b3vTf1pSnnm200i986aWX7h0bXbf74Ue39f37+z/513e96m/9e92p/+/Xnn28mZf8T77f1e94/a33Lvd/y2L1pPzve+29eL+/pS3/k7/t+1/3+9vevvfv4vv3r0x+3Xff8Rff1q/92q/9y8/83Z93XveGV3p/sD8X3Iu+/y9A8c9/9Mcf++5/e+97f+o3PvGJDx9m0y5xL+/33X8176Nf+7Vfe++Lnvf0+5+S4e+9/o3/3Rved+mPvfltfj2K+v93f+/fvH//5X/3+37+Jd6174p650e/c9mO03/fS9r8vd7L6fX099/L936nv/fO9/5e1y7bftXf9f8n3//0+/9P3/3+9/f97ve7/v6X+x//1b3v37vfv7f2t+3e9/m4d39+9/49/+j03v9933veXfe5f0/XnfnS/4Oee+65S+/77S9f945vece352/6/j9s/LOf4P1+1X3d3ff0d2777i++d28e7S5fevfdtx14/O3a+/vfS//+6N5vdL8+2fL5m/e4/2nv+e/X/e6/f+d9mP+O+167699/33/c+57fIvf/m2/33/d/X/f59/S++Xvv4n3veO9//22557xbfq9aXb382lfdOP70d9o3f+mrv/+H//Sj//z0D9/94v0/3Xf3p223f1vf/+nv148e1z64p2+/783+zvd/l4/8ve9//3e/9Sffc+M2+xGv/Z7d/b4+X/37vd/7i/v/O9X+3v2+X59s2Xfvv2+2//6e43u30fufxIte/KInb8v3X/1Xf/XW0XG/p9FoGGB268X/d/X/fvfxqUv+174v/7e3e/49fe9m/vf++Nvd/Sfd7vffc3Xn4+73//18++38m3a83/fe/veaL9y4f3v52/S4s99i15b3f++H5u4//53f/v0nnXvHqX2/8pMv9/72mR7fe2e+0451X/c+b3e717S/f++vf+O+51+7a/cXXvEVP/U2vve9P3n7p+/v3ff0fe8I/vP/1/f/fe6+18u+v/ceS/c/3d9/v/f3dD8/m3v0vXv/9v15P7vvG38fve//Pve873/fv9m3d7++u/fS/e27e++e+fE3+v772+/d3N92uLffu7n/d/fd8/S+f3+b/Ufv1fS941p330euvvT/ee+/e/v+57+/v3fvX//e79/v3v39p1/S3p/3e0f98t1X9e3v39f37+e/vfI1Xv/m2713f0+/p7v3969P9+vTrsX31N3e+/fA3731u3OXX33/279+3X//i6u//fef4C138p2v4pPfePve90P/fU7v+92vTy1f+N9m/u8p/+3fvE/+/qf/v6f1vd///e97e88xve/mXf5mX3jnn3s/uGv23nL32X3f++Iffs+3/2Svuuv3vLd359v332+v3526//17a/fv5/Xf++S9f+/v9+957723m//vf39u9z9veO3b9j3v/d3vvOce3b+t/xNvf3/u8b/ve/veIffy3e42X/h443m3vX/f32/G3/d3fefP5+7x337v9+4xvfvd2239L33f9//5Tff/vu2xH/vH1/+u/+qXffI23vvef+f22X9v/N225337r3f/p5N++1tftG/e9LbfNvu+fveaP//k5116+eUf4W2veU08uOvd+/fuPXq5f37i3mPfN5bvd1u/4z2/3/c8v+2/v/ed/3a/0X3d/e//nrd0X3Xb/p3/u/X8xG1f1O2vfvd93e9/u+/1XjfeNfP13/sU996A53v77O6+t743e+91X1e6a//7pnd4e9e51f+u3X//n/Pef32v5483//t7L3v3/p3veP/12O8f/L379d71+3z+4T/7/37f8fbfd6//nvdXvvP2fN5v/+v7sS986U9+/7/6t//24e3vfs3f/37f/uA/vve/vve3f9/vv/X3f+f9fvdve+fbe9/d/+x7P7C/v8XfL3O//0P/bU7vfO9/5N//b+013/Xev5f3vv73vebdn57Ofe5v2l7/3f0f7i192ze9+eS2+/fe+Nvb1v/5T/P9/f0n7P+/qdfy/X33tO/fe3fvu/f223v/m/fevX//6m889c1/4+27u7vX/f/31e873f/4272/p3t933fe37s1/22/vXvv/+pXvvrdfx/f//6ed//+/e9+v//53/b77x6/+S+//Svv2f+/+/2ve/xvv/m/xS905333f2S/f4/X3vd3//a+X3ff5y3X831u31fe27/+/ve1uX/7Pq899xuv9f6e/d6f73vvr72f854bbrnhr4B4y8/s3Xv06f363q943/feft2/0063vf/v4e+/S//3vd//v+y+7p/v9sNvuI4/vPf0S7qP1S/vv+03e4/v6bvvI+f30P6+d//f97vfe49533fS+x8yMvb3/d1vevvO/uMvfX/f3+ze/3v/e+/+/v41p//f1/f/72vvvvff2d8m3/vd3m/25fOa+/v3v/f/fbf/93vvu/fe292m9/f/u8fe/7vvn2veft/6+1947e++5y2f33f3a47vvf9eXffv9+/v39d997T/2t73vfS+b9933/d+b7mXvv/e++79+7v3vvO1l/+472/f/3vv3t3e/ffv3+s/u/c3f/4/3X76//p3b5NffIpv84bS13i3u1qvef863uG9fN973ve0O//5pXm/p+53//6vf/+mfe9//m/a4f0bf+/9fR/d494/a3f4m29759/vf6fvfd4ffu++/+1/XvfS+93b/d4993vIvdveS//3Xv8p7O6+7ze+e93s99e+37s33d2/e+/fvf/Xvv97/+79O+f7X/nef3/v72m/19v1m/7XvfO+/91/791/D333vu/f+d9X998/P/X9//vv++f3791/D/2/XbvbvfveXf/u9++3vd9v1//39/u/7f6m928ffv/uf7vv/u3e39vd//a3/7j3332/9/3v5u/ve++m0f77+3u/fe89eS/f3+/v3X/mvr/3/vf/s2/fve3mXnv3f//6X7yS33/X/d73u38ffu/9d7+m9/fe30vf++1v2XvfvnLffZ/f8//e6e7u1a8m9+u/f4/v+3v/Xf349//qfW97T49539+/S3vfn5e5vvf87f+m+/vve+/+8z3f7e15/3ve+/u/+f4f++vfv//7vvvf5e7/7rv//s/ee1939//uS/e33d/v3W/ve/d//3tfmXvvnv54O+/3fffevfe/+/7efu/+vfd924/3/933u93/9/v/f3d//fve++m2/4/71vf3/fvveff5e/ve++3p2m3v+2v3/vd2v6d91/e/+ze+28+X/X285T8n35f/xvt/3/v3663b4P7/mPvX9++5v/d17/u377fve/vvd3s2p692t9fTvnf/Tfvf8/5LuvfvIe793l36+5fme8tXvvx31245sve442q3p54x8sIff3Hrf366/8+/vvvu39e9939/d/mvd7/9e+/feXvf3ff++28xP13/+fv33Ovefe+3vd+/3//9e+89379/13sX9/9Xf3vv3922f3e8f8///vvuvnf3fe++v1vf37v3966m/fXf3fv1vf337vd7e+/b4H3v3X93m7/d9vd/f7t/v22/+2/679/9d3f/5nff95577pG/mvdud919d3//3s33+d8u/f135L7u/vefI+/p/Xv36+mffn/+3X/3f/82f+/72ve+793//e9v0//uf//2Pfv+f7e7/+/73fd75ve+51f+/i++94u3/Z34l3u59/Xed3f3/ve9v+e7++f+L3e3f93933v3e+9//w+/p9/ze0+/p++9u/e339Xvff/2vvu23vv7/XfvuXvv7u94//e+0f13f+1++/c/vv2+e/fu7S/9/4f7vfX2Xve7v/e7++bd9e1/vf2+Lvv+Xbvv3rvvf7fbX93f33v3/pvu+X3f9/ve+5qfe7+ffp3f++2f0x2+/e/f5l/x1736v/34v330/50Ivv189yX/A/4f1l27dtlXvfKq/x1C7X7lK195/9atWwcS4Aagv//yB37wve89569u/4p/8aY3XbXjX65vHjry8J+ff/6FN15xxQs3SinnL69cvPzaV10p9u49+s+2bb+6t/fgP3iIe544duThm26+6Svvf+vbf/o3X/Kiqz8dhhECeNz/+i/eL2y//35x5ZVXiiuuumrcp26/Xa3eujl5y5ve/J+PHTv29v/1e//jL+44+p//7LqX/uSLhRA4f33rLdz2tb9k06bNq2686SZu/9/fZOvmzbz5TVf98cEDD/221lp/3v4v/oI///NP/7O/8/e//N7v/9m/9839j8T5fJ7sS/sL/4UfeL3xX3XffX957s6LnvdvN9z0lreMjY3/93/813/9n53bdzx/+eWXC2tt/pAXXv4vfu93ftfbueO839+/f/++N/3s3/n7T3/mU5f8i/9z5OChf+4mO2+74orLr73s8st/54orLv/G/sP7j/3xH/2RP3v31//z37y15x3//C3XvPyXpRD/fO3U2I8ffPgf3rZ146s3d1//13+I9+M//mN/6x//iR9/9rXv/eVPfvInX3H3/f/9xVde8dL3/e7v/q/f8p8s88P6u97s/224yvN/3p61a5e88847/Xv3f/9j1/f1D37s0suu/N13/vM/vvI9/+/vvf+iS178v/7qP//4d5mZ3sMv/fI/5aYbb2Ssv/erf3p92/m3/2n63d/f+6d+6md+9p1/8q5/9lX1fP+vfe4zf4d/9oee9bZ/s3PnTr2v/6/41EdeZ926devvfeqX3f5I/Ie735x/v3T/e8Xf/0u/+i9uuf22L/7q29/xS8m+e3u+/jvf/vLtt91+y/y86fX29uL5Pps3beJNb/iPvOO9v/jrnfXf3/X4m47/9H/3M/vfevWf+Nbf42U33/L6vO/703PPOefr/33/vf/vH977rbf9zG+pQ3se9j/z/3zB3fX3v/s7/v45f/2XN7yA29/5G00An//L/xT33nkbf+4P3f/uG39NnTh58vjf3vuNT2y7+Nf4d99q332e7t3A81f/533fS+5/f/s6pL+/v8874v/7+y9/8+X/+t25aT3S3/9X/Ie3vOnvfvd770p+P3D/Tfe2u++/7563f6q9462f/N7s99+1//0f3v9P93/r/R7/mZ+/3fIed/Odf+nI3ve8S5340y+a99912z34/3/k323d/339m3x59+/e++ffs563/1f2ftL3f+6Nf7Ntz/seufPtv/11fIu877y98/2fvv2xN7ztrfe/8v0f+b/ee+e/+/iXv+z733/L3vv7vO92972/u+eO//O32y/5Lfrp3v++u16fvu/p77033+XuvOvdzffce++/7d69X3P3fvS17m39e+9/7vtf533f7++O9//d8S96f+f1y/uv++m/vv+ee++/5/9z/3fve/f/a+/5ve32fvfv45a33X//O39/u/vu/fe2u++/914/8L6n3133ffve/W9/+5e+/0+40d/D397z+Xf3ve++P+//b/f+3/u23/c/fXp3933fLp26715f+v4X+S93393z2p42f9+O++//w1v3f2eP7r7nvvd75+f67/9xPvvp/++mN43f+1e/cve7fvf+H/vL/Tvf+63/fPvd7Sffm93vvftvuvv/f3/vfndvf5v394v3b+v3//t2f0/vO5e7X+/u3u3vfe+u5/17796vub/v7u/de/fX7+/df+/d/+/+O/sbf+1f5j///v9f/H1f+sL+4/fe39Pfd+O93+v+G/+b/u73/e9+3v4m94/fI86v94LbvubPj+f1z2373C33/43+8/1X/O7e++feX97f/bf333fffe8/9m533/ve//f4e/vP3eX/9O/7u1++v9s/fXv3f/c33f/ve5vf+v+vv//33X//f+6Xf/2vd2x/14981/7/ne577f8p//7u7+/v/e8ed9/9m813vO53//d7f+/ffc9v1++1s/e+44534e7/L3x1+e148e/vI23297L/e2+6v4fve5/m//9/+3v71/C3//y/y/3f/Xff767/9O3/28e/f3f33/d7f+9XfX8fevffA9v3XfI/ve36X/bIe7f5+dvd3f/+43/vvt+3fe999933u2e/e+1/X1f6v3v/+u47/+/p/f3/m0/v/2b9+5/m7/4bf/e6/7rv3f3/3v79183d3f2b3/93fe9d+5vvfu/+u93du3v3/33ve4+7f//2vd///nd37+fvePve887e/Xv36d8f+/43/f7/3ne//a+n//f3/X3fXf92x/v3d9373/d+vfXve2+3ffcvef/m33m/u/v+e5/m9+/f4++/93fX7//33X93v3O3m7/d9vd/f8d9929/e/3739/d/Xff3Xv39y7/fL2/f7f+/Xv27u1vf/+X1Xvd945Xv1z5X/K8/7+7f+/3vXdvv3v399v/e865fUq3f3i3/Uv/e++f/u5/392931/a3/3/0s9p233373/3fe9473/3/+7f++f7+1S/A3d33+8v/+/XfS+/e8/9f+9/v7vf27v/73/Xfv92/S//vve/d//3vu3e/32//+/fv/+u9/e9e9929/7u3f+3179Xvf33v3/v2+C+9/6b/v+/f/d/v/ffu+/v//a/e/fvu/u///ve9+95pP/e3r/n/n/v/rtve/ce337fvd/vv+ft33/6m+7e/a+3v+/fv3/v/r/fvbf/fW9882ve//3/6e2+/xM/q1t/I/f5TfvuPfv/7vff+/vX+/m1f/e9tvdv99/d++/rve/f3d3d+3v/Xf/d3fve//ve83vf/33f/d/f+6l73r9f7/13d//993d/339///f37+/3fX/f3fdvf/++/v7vf9v9bf+/e7u/d+/2fvvf4//d22+6u/+u++7u/d///rf33e6/e/8f/u542/vf33/33Xf3vne7u/e/+7++e93f/+/f3Pvefe9++3/3f/8+/f/e/m95++/+vdvd/f/v7f/32/38e937d94L7v2///0+d3Pfe965u3fve++u3e/d++3f1+594u6+u7vf1fv9ve3274291572d//S31/ve9/+/v1/f++3/3fv09vdXfvd93t9/72//e9vX77f3/vf33fv9+/ff1+v/dvd+/d2f79v21e+/9/95b/f3vX/f/v36b5393d/+X3/e/t/v3f+/f4Xf+I/P//q931//y4/+uS//+3+XfS33ve443/N3/+j6+e+/t2v/a/+z9938L3v/+v/46eP9T4+3nvS5X3v6N4v6N693/0C8O/67/O9j/f9/v9/f9S3v280/aI34H49fS/4X/S9+3S3X39/17/7+1///q6731u+/11+/0v061u8p59/1/v+/ne9P99/v9/zS+73vv/v64t697S37v/+e2D15m7+9/1/v5/fvvfe/99zve7e497u51S/5L8f//m/a//86//7l7+7397z+ff/vv39r42//587v//3fe2e9p/+1u92//9//P7/36+vef//992//+3+ff/+/u/v//s///v/e++//d5u3fe9991313fv935S8/mX/s3e/S7d93+/d6++/2f31O/2X+5f79/5vvfv9/e///S3v2///3/v+7vX+9u65fXvdv/S9+e+3/f/e0+vef++3fve//3fe+/+e3Xv9/ff3P+e+39vf/ff8++S+973+X/ff3/ff9/fvd393Xv/f/f/ff33vfv/e//ee9573r/3v3/v2ff9ve7v//++99+/s3//O9v33nfvu/+5++9p+/Xf9/d++/+/4z+eI3f/3fe/2f/+9vf/f85uX2x3/+5u18vfv23ve3+/9//d93++5e9v+93f393/d/+fe+/9tvd3/934++7u+u+u31/u+9///bfe33v//v37e++3/+4e495uX+19v/37d7/2//f293ff+7vf+Xv9242//3fe3e9939/t3e++vv++fX/fe/9v6/5vv/d3ff93vf+23/t/+/v7e///f3evv93b9/m9/ffve9/9m//8d//f/v6d85a/p/3X89d//0s7+/d/9//131/+174v/7/59//7d+m5a/ev3fvf7+/ve3vv/+vfe9/3v5u///v+6/u///vf37f/vf3v7e9+f+//2/Xbf3/f++/fv//743/v/fve+u9293e3d/+/f9/fe/v/e983vvd/ve+/+/9/X9/7nfd39+ff33f3+/6u++8e99999z5f42///f7m/m/e/Xf/+/fd//evp3/fe9/3ffve+v3v3vv933/vvnd37e++/vf3d9d3/f3vv3s/+e//vd///v2vf/v+/vvfvfe+fe/u2d///O9217f/+/fe++/vfvfv/Xfve8e7++5d/Xvf3/9u3/++/e/e//99b/fvfff33d1b37u333evfd6f3vf///f3fvd+3fe++/7e+93957+5/+7fe++/d++/538v3v153ff29vf/ee92/79vffe79///48mX3//efvev/++/u/ve+1v//r4/+ff2f/v/7f///t/v2+92f/9v7+3v7X7/X9/f/f3//323f//33vf22+/3fve/f3d//fveff+223v/53vf+9/d++++/++e1/1vv/3u++/3/f69/73d7Xv/fv51X/K//419b33/tff3vf+ff//vvv/ve/ff//33e/ve+0b3///f33e/t/v3v3tfe6/899//3dve/ve///v///t73vvefe97u69++/fe/fd/7vvfv3fvve+/e/+ee++/52/7d3f9ff/7u++/5x6/9t3+p/+3v/u/e//9320x6j1/+9/X96eX/+vv3++3f/vef597z+de/33/vf1b/ffft6/vd/+7/e+/+7fvv7e3e9//e//+3e3f/+93b/d/e9++d9//v723vffvvu++37f+/Xvvf99vv/v/3/dve9+97e++/3e/7/s+e85X/K9v2L5d+f32O//3/332m2//wG9+8m2vePuv3vTInm/ef+/f3fffe++5f3d32+5+S9/fv2f/fv33f3vvefe29/u3e+fevf++/e+f99d997d/2/v/e++/+/7e+7vef/vfe+/d3e8e/vft7f/d+/fvv7u/e78/f+S//bvf26f/+2/v39/b+/33/ee++9/s2f/8vvvd3e+/d+/fvf9d2+3v/fe9fXf/3v37f/vfvv+8d/f33Xfv9+329/fe/3/f97vv7+49v3f3fXf/ffvft+++/f/f965d++/vvvv/ee/Xfe/vvfff3/f3ffve/f++/27vevvvfe//f3fffe++5y2f333f/u7//9/1899539+/37f/fe++5e1/e++/de/v2vfve+Xvv3vv9f3vvefffvd+X++/9++/2vvv+f++/b//d/d3d/d3e954b/O/e822vuf1f/qO//6a3ve3qP3jvq2+57Xvvvuv2f/rO991z+S/54vXvv+P++/e8/27d3/234/u9e+9++/Xvvfffe9vff/vefffe95e+3997f+/ff+9+/977X/ve2/33/+3vv3u39++/f++/+/d3//u7+/d3vf39d19y/3m//nfffe913Xv/fndvf/9f//e3e/f3ffvd3f3/3dvd/fd939/ff++/e/fe9++51z6b8f142mve23vff3fdv+/e/vffe/e/e+17v++evnvfff/+99vf/vfu++/ffbfvvfe75vve966fS3e39794/3m///a/+///+e++22m/+5fvd2e+++fS3ff9/e9/ff/9u+/97d+f++/3f29391+/e9s9/6ffm/vv+ee//vvd/+9f17vvvvve/fffff3975m35/7e//++/99v3//fve/u+/e++/2vffe9e9/3vfdd/t+ff39vd2/f9u/v33fdd+333/t89957398///++/3++/e5f/vvve/+feff4+/fdu6d++/51+19f/83e++/39f///v+/33fv/e8/m//8vL3f3dvefe//23u/+5/3u93/9/ve+23vvvd1e9++/3f395ve//u79++/9u++9//3/73vvve9ffdd/fe3m9s/+vf/e8///16/9e/d99X33ve/vfe++++/e/e//f3f/+/f3Nvevvvffffffffffff95e9+/3599e97f+n7++7vv/v9ve+99d19vvv/2/v//e//57f2vf3f3f3391d3d/d///3959b/e9+/f3e97u++/fff2++/e++/23d3fffe/fvd9ffdfv+/d//3e+3++2/9u+/3f932f3fvv+fe++/29/9733vvn7vd/f139+3/fe/7fvd+/3d9ffddfe++/3292791f3d3d3d3v3///3d33fffe+/d2ffddf32/3fX3fe//3//9v3u++/5483fO92++79vfe//f/vf3d/f99/99d/+3/u++/777v39999f1393fffed9e373/3f/7/vve++155557/P9/37X/d/f+e///+/d++/u//319+/dd99d3fvfe93ve3b3XvvfdffeddfffXfe/313vf+d3fv/+/fvd3fd+/3ffedd//39//u++/f9/9/5L4Xv/+/v/fe391ff19+/f33+///dvd+3//fvffvfvdff2/ddffdedddfffd9ff3319fd+/u++/3f/ffe/dd+ddfffde++5xvf9/5/2v/vv/3f/3fe++dfffdefdfeddddfedddd+d97vvvffed/fX/fX3fve/3ffed/e++/7/3fefffddffd3v/3fffd9fXed+e9/d3ffedddddfffdedffdffX3ed+ffffdd9ffd+fffffeeeefe/ffdf3f33/d///X3e/+99/++/u/vvfdfedddd3f/d///vff/f/9/ff/efXfff/fdfff9feeffffd1fff3fef//fff/3ffefedffffffdedeedeeeeeee/feffe/fd//efe//fffffd3fffedffeedffffeefe/e//ffeeeeeedffffffffeeffd3eddedededeefedeedeedfffeddeefd3efeddfefffeffeedfefeedeedfeeeffeeffd23/5d290G5u3fve++293933vvvv/fff3vXvf+fffffffffefeeddddefdede/fffffffdfeffdfff3/ffffffeedffff3ed3efe3feeeeefeee/fffffffffedffffeddffffffedeedeedffff/fffffff3ffdffffeed3efeeefeedddffffffdeffffffeffffff3ede3fd3efeedfeefffeeeeeeefe/edeede3efedeede3ededededffffffedefefffff3effffeff33edeedededededeefedddefedeeeee3ededffeddfffdedefeede3ededeeeeeeeeeeeeff3ffffffeededeeedefedeeffeffffffffeefe/ed/e/ffefeffffffffeede3efffede3edeefedeede3eedededed/eefedeefefefffeefeeeedeedeedfeeee3efefeedeffffeeeeeef3feffffffefeefeefeeeefee3ffeeffeede3edeedee3ffedeefeedeeffe3ffeee/ffeededfefffeeeeeededd/fffedeeddfeffd3efeef/ff/efffededeefe2/d++/1/ddfffdd3dedffedeed3e33f3ffffffedd3eddeefeffdedeeeefff23/effeedeedfeff23ffdedeedeedffff/ffede/edeededdede3efeedededfffede3eed3ededeffedeedeede3feefdeddeefef3eeddeeeeeefeeefdffdeeeef3ffede3ee3/ededdedefff/eefede3ede3ede33eff/eeefeefe3eededededeff27eede3ededeeeee3fedeedffeffeedf273eeffeffef3dedefe2/ffff3f/dede/ffe/eef/fe27ed3eeffefffffedee23eed2/d///9s=" alt="Khevin Salandron in a dark professional coat" />
+    <div class="hero-text">
+      <p class="hero-eyebrow reveal">BOOKKEEPING &amp; QUICKBOOKS SUPPORT</p>
+      <h1 class="reveal">Khevin</h1>
+      <p class="hero-sub reveal">Your Books. Handled.</p>
+      <p class="hero-desc reveal">
+        A tech-savvy QuickBooks specialist with 3+ years reconciling transactions, fixing broken
+        ledgers, and helping small business owners actually understand their numbers.
+      </p>
+      <div class="hero-actions reveal">
+        <a class="btn solid" href="#" target="_blank" rel="noopener">View Upwork Profile</a>
+        <a class="btn ghost" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
       </div>
     </div>
   </div>
